@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'accounts',
     'website',
+    'portfolio',
 
     'django.contrib.humanize',
     'django_extensions',

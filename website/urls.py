@@ -10,6 +10,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('about', about, name='about'),
     path('contact', contact, name='contact'),
-    path('elements', elements, name='elements'),
+    path('services', services, name='services'),
     path('newsletter', newsletter, name='newsletter'),
 ]

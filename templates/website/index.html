@@ -17,7 +17,7 @@
                             <div class="banner__content">
                                 <h2 class="title wow fadeInUp" data-wow-delay=".2s"><span>I will give you Best</span> <br> Product in the shortest time.</h2>
                                 <p class="wow fadeInUp" data-wow-delay=".4s">I'm a Rasalina based product design & visual designer focused on crafting clean & user‑friendly experiences</p>
-                                <a href="about.html" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about me</a>
+                                <a href="{% url 'website:about' %}" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about me</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                                 <p class="desc">I love to work in User Experience & User Interface designing. Because I love to solve the design problem and find easy and better solutions to solve it. I always try my best to make good user interface with the best user experience. I have been working as a UX Designer</p>
-                                <a href="about.html" class="btn">Download my resume</a>
+                                <a href="{% url 'website:about' %}" class="btn">Download my resume</a>
                             </div>
                         </div>
                     </div>
@@ -115,14 +115,14 @@
                         <div class="col-xl-3">
                             <div class="services__item">
                                 <div class="services__thumb">
-                                    <a href="services-details.html"><img src="{% static 'assets/img/images/services_img01.jpg' %}" alt=""></a>
+                                    <a href="{% url 'website:services' %}"><img src="{% static 'assets/img/images/services_img01.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services__content">
                                     <div class="services__icon">
                                         <img class="light" src="{% static 'assets/img/icons/services_light_icon01.png' %}" alt="">
                                         <img class="dark" src="{% static 'assets/img/icons/services_icon01.png' %}" alt="">
                                     </div>
-                                    <h3 class="title"><a href="services-details.html">Business Strategy</a></h3>
+                                    <h3 class="title"><a href="{% url 'website:services' %}">Business Strategy</a></h3>
                                     <p>Strategy is a forward-looking plan for your brand’s behavior. Strategy is a forward-looking plan.</p>
                                     <ul class="services__list">
                                         <li>Research & Data</li>
@@ -130,21 +130,21 @@
                                         <li>Business Consulting</li>
                                         <li>Go To Market</li>
                                     </ul>
-                                    <a href="services-details.html" class="btn border-btn">Read more</a>
+                                    <a href="{% url 'website:services' %}" class="btn border-btn">Read more</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3">
                             <div class="services__item">
                                 <div class="services__thumb">
-                                    <a href="services-details.html"><img src="{% static 'assets/img/images/services_img02.jpg' %}" alt=""></a>
+                                    <a href="{% url 'website:services' %}"><img src="{% static 'assets/img/images/services_img02.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services__content">
                                     <div class="services__icon">
                                         <img class="light" src="{% static 'assets/img/icons/services_light_icon02.png' %}" alt="">
                                         <img class="dark" src="{% static 'assets/img/icons/services_icon02.png' %}" alt="">
                                     </div>
-                                    <h3 class="title"><a href="services-details.html">Brand Strategy</a></h3>
+                                    <h3 class="title"><a href="{% url 'website:services' %}">Brand Strategy</a></h3>
                                     <p>Strategy is a forward-looking plan for your brand’s behavior. Strategy is a forward-looking plan.</p>
                                     <ul class="services__list">
                                         <li>User Research & Testing</li>
@@ -152,21 +152,21 @@
                                         <li>Visual Design</li>
                                         <li>Information Architecture</li>
                                     </ul>
-                                    <a href="services-details.html" class="btn border-btn">Read more</a>
+                                    <a href="{% url 'website:services' %}" class="btn border-btn">Read more</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3">
                             <div class="services__item">
                                 <div class="services__thumb">
-                                    <a href="services-details.html"><img src="{% static 'assets/img/images/services_img03.jpg' %}" alt=""></a>
+                                    <a href="{% url 'website:services' %}"><img src="{% static 'assets/img/images/services_img03.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services__content">
                                     <div class="services__icon">
                                         <img class="light" src="{% static 'assets/img/icons/services_light_icon03.png' %}" alt="">
                                         <img class="dark" src="{% static 'assets/img/icons/services_icon03.png' %}" alt="">
                                     </div>
-                                    <h3 class="title"><a href="services-details.html">Product Design</a></h3>
+                                    <h3 class="title"><a href="{% url 'website:services' %}">Product Design</a></h3>
                                     <p>Strategy is a forward-looking plan for your brand’s behavior. Strategy is a forward-looking plan.</p>
                                     <ul class="services__list">
                                         <li>User Research & Testing</li>
@@ -174,21 +174,21 @@
                                         <li>Visual Design</li>
                                         <li>Information Architecture</li>
                                     </ul>
-                                    <a href="services-details.html" class="btn border-btn">Read more</a>
+                                    <a href="{% url 'website:services' %}" class="btn border-btn">Read more</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3">
                             <div class="services__item">
                                 <div class="services__thumb">
-                                    <a href="services-details.html"><img src="{% static 'assets/img/images/services_img04.jpg' %}" alt=""></a>
+                                    <a href="{% url 'website:services' %}"><img src="{% static 'assets/img/images/services_img04.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services__content">
                                     <div class="services__icon">
                                         <img class="light" src="{% static 'assets/img/icons/services_light_icon04.png' %}" alt="">
                                         <img class="dark" src="{% static 'assets/img/icons/services_icon04.png' %}" alt="">
                                     </div>
-                                    <h3 class="title"><a href="services-details.html">Visual Design</a></h3>
+                                    <h3 class="title"><a href="{% url 'website:services' %}">Visual Design</a></h3>
                                     <p>Strategy is a forward-looking plan for your brand’s behavior. Strategy is a forward-looking plan.</p>
                                     <ul class="services__list">
                                         <li>User Research & Testing</li>
@@ -196,21 +196,21 @@
                                         <li>Visual Design</li>
                                         <li>Information Architecture</li>
                                     </ul>
-                                    <a href="services-details.html" class="btn border-btn">Read more</a>
+                                    <a href="{% url 'website:services' %}" class="btn border-btn">Read more</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3">
                             <div class="services__item">
                                 <div class="services__thumb">
-                                    <a href="services-details.html"><img src="{% static 'assets/img/images/services_img03.jpg' %}" alt=""></a>
+                                    <a href="{% url 'website:services' %}"><img src="{% static 'assets/img/images/services_img03.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services__content">
                                     <div class="services__icon">
                                         <img class="light" src="{% static 'assets/img/icons/services_light_icon02.png' %}" alt="">
                                         <img class="dark" src="{% static 'assets/img/icons/services_icon02.png' %}" alt="">
                                     </div>
-                                    <h3 class="title"><a href="services-details.html">Web Development</a></h3>
+                                    <h3 class="title"><a href="{% url 'website:services' %}">Web Development</a></h3>
                                     <p>Strategy is a forward-looking plan for your brand’s behavior. Strategy is a forward-looking plan.</p>
                                     <ul class="services__list">
                                         <li>User Research & Testing</li>
@@ -218,7 +218,7 @@
                                         <li>Visual Design</li>
                                         <li>Information Architecture</li>
                                     </ul>
-                                    <a href="services-details.html" class="btn border-btn">Read more</a>
+                                    <a href="{% url 'website:services' %}" class="btn border-btn">Read more</a>
                                 </div>
                             </div>
                         </div>
@@ -945,7 +945,7 @@
                                     <h2 class="title">I proud to have collaborated with some awesome companies</h2>
                                 </div>
                                 <p>I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps in different industries and verticals. Eventually, I decided that it would be a fun challenge to try designing and building my own.</p>
-                                <a href="contact.html" class="btn">Start a conversation</a>
+                                <a href="{% url 'website:contact' %}" class="btn">Start a conversation</a>
                             </div>
                         </div>
                     </div>
@@ -1015,7 +1015,7 @@
                                 <div class="blog__post__thumb">
                                     <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog_post_thumb01.jpg' %}" alt=""></a>
                                     <div class="blog__post__tags">
-                                        <a href="blog.html">Story</a>
+                                        <a href="{% url 'blog:index' %}">Story</a>
                                     </div>
                                 </div>
                                 <div class="blog__post__content">
@@ -1030,7 +1030,7 @@
                                 <div class="blog__post__thumb">
                                     <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog_post_thumb02.jpg' %}" alt=""></a>
                                     <div class="blog__post__tags">
-                                        <a href="blog.html">Social</a>
+                                        <a href="{% url 'blog:index' %}">Social</a>
                                     </div>
                                 </div>
                                 <div class="blog__post__content">
@@ -1045,7 +1045,7 @@
                                 <div class="blog__post__thumb">
                                     <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog_post_thumb03.jpg' %}" alt=""></a>
                                     <div class="blog__post__tags">
-                                        <a href="blog.html">Work</a>
+                                        <a href="{% url 'blog:index' %}">Work</a>
                                     </div>
                                 </div>
                                 <div class="blog__post__content">
@@ -1057,7 +1057,7 @@
                         </div>
                     </div>
                     <div class="blog__button text-center">
-                        <a href="blog.html" class="btn">more blog</a>
+                        <a href="{% url 'blog:index' %}" class="btn">more blog</a>
                     </div>
                 </div>
             </section>

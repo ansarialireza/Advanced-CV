@@ -7,8 +7,8 @@ def home(request):
     return render(request, 'website/index.html')
 def about(request):
     return render(request, 'website/about.html')
-def elements(request):
-    return render(request, 'website/elements.html')
+def services(request):
+    return render(request, 'website/services-details.html')
 
 
 def contact(request):
