@@ -14,7 +14,7 @@ ALLOWED_HOSTS = ['127.0.0.1',"localhost",]
 TIME_ZONE = 'Asia/Tehran'
 
 # sites framework
-SITE_ID = 3
+SITE_ID =1
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
