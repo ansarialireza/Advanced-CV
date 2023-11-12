@@ -1,6 +1,9 @@
 <div class="widget">
-    <form action="#" class="search-form">
-        <input type="text" placeholder="Search">
+    <form action="{% url 'blog:search' %}" class="search-form">
+        <input placeholder="Search" name="s"
+        type="text"
+        onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Search Posts'">
         <button type="submit"><i class="fal fa-search"></i></button>
     </form>
 </div>

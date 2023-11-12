@@ -77,33 +77,45 @@
                                     <div class="row justify-content-between">
                                         <div class="col-xl-5 col-md-6">
                                             <div class="blog__next__prev__item">
-                                                <h4 class="title">Previous Post</h4>
+                                                <h4 class="title">{% if previous_post %}Previous Post{% else %}No previous post{% endif %}</h4>
+                                                {% if previous_post %}
                                                 <div class="blog__next__prev__post">
                                                     <div class="blog__next__prev__thumb">
-                                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog_prev.jpg' %}" alt=""></a>
+                                                        <a href="{% url 'blog:single' previous_post.pk %}">
+                                                            <img class="img-fluid" src="{{ previous_post.image.url }}" alt="">
+                                                        </a>
                                                     </div>
                                                     <div class="blog__next__prev__content">
-                                                        <h5 class="title"><a href="blog-details.html">Digital Marketing Agency Pricing Guide.</a></h5>
+                                                        <h5 class="title">
+                                                            <a href="{% url 'blog:single' previous_post.pk %}">{{ previous_post.title }}</a>
+                                                        </h5>
                                                     </div>
                                                 </div>
+                                                {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-xl-5 col-md-6">
                                             <div class="blog__next__prev__item next_post text-end">
-                                                <h4 class="title">Next Post</h4>
+                                                <h4 class="title">{% if next_post %}Next Post{% else %}No next post{% endif %}</h4>
+                                                {% if next_post %}
                                                 <div class="blog__next__prev__post">
                                                     <div class="blog__next__prev__thumb">
-                                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog_next.jpg' %}" alt=""></a>
+                                                        <a href="{% url 'blog:single' next_post.pk %}">
+                                                            <img class="img-fluid" src="{{ next_post.image.url }}" alt="">
+                                                        </a>
                                                     </div>
                                                     <div class="blog__next__prev__content">
-                                                        <h5 class="title"><a href="blog-details.html">App Prototyping
-                                                        Types, Example & Usages.</a></h5>
+                                                        <h5 class="title">
+                                                            <a href="{% url 'blog:single' next_post.pk %}">{{ next_post.title }}</a>
+                                                        </h5>
                                                     </div>
                                                 </div>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="comment comment__wrap">
                                     <div class="comment__title">
                                         <h4 class="title">(04) Comment</h4>
@@ -203,8 +215,8 @@
                         <div class="col-lg-4">
                             <aside class="blog__sidebar">
                                 {% include 'blog/blog-search.html' %}
-                                {% include 'blog/blog-recent-posts.html' %}
-                                {% include 'blog/blog-post-categories.html' %}
+                                {% popularposts %}
+                                {% postcategories %}
                                 {% include 'blog/blog-recent-comment.html' %}
                                 {% include 'blog/blog-popular-tags.html' %}
                             </aside>
