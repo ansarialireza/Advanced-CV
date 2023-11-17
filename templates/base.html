@@ -66,7 +66,13 @@
                                         </ul>
                                     </div>
                                     <div class="header__btn d-none d-md-block">
-                                        <a href="{% url 'website:contact' %}" class="btn">Contact me</a>
+                                            <ul>
+                                                {% if user.is_authenticated %}
+                                                    <li><a href="{% url 'accounts:logout' %}" class="btn">Logout</a></li>
+                                                {% else %}
+                                                    <li><a href="{% url 'accounts:login' %}" class="btn">Login</a></li>
+                                                {% endif %}
+                                            </ul>
                                     </div>
                                 </nav>
                             </div>
