@@ -77,7 +77,7 @@
                                     <div class="row justify-content-between">
                                         <div class="col-xl-5 col-md-6">
                                             <div class="blog__next__prev__item">
-                                                <h4 class="title">{% if previous_post %}Previous Post{% else %}No previous post{% endif %}</h4>
+                                                <h4 class="title">{% if previous_post %}<a href="{% url 'blog:single' previous_post.pk %}">Previous Post</a>{% else %}No previous post{% endif %}</h4>
                                                 {% if previous_post %}
                                                 <div class="blog__next__prev__post">
                                                     <div class="blog__next__prev__thumb">
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="col-xl-5 col-md-6">
                                             <div class="blog__next__prev__item next_post text-end">
-                                                <h4 class="title">{% if next_post %}Next Post{% else %}No next post{% endif %}</h4>
+                                                <h4 class="title">{% if next_post %}<a href="{% url 'blog:single' next_post.pk %}">Next Post</a>{% else %}No next post{% endif %}</h4>
                                                 {% if next_post %}
                                                 <div class="blog__next__prev__post">
                                                     <div class="blog__next__prev__thumb">

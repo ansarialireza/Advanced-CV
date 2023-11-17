@@ -2,6 +2,13 @@
 {% extends 'base.html' %} {% load static %}
 
         {% block content %}
+        <style>
+            /* Add any additional styling you need */
+            .small-captcha {
+                width: 150px; /* Adjust the width as needed */
+            }
+        </style>
+        
         <!-- main-area -->
         <main>
 
@@ -61,6 +68,9 @@
                             </div>
                         </div>
                         <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
+                        <div class="form-group">
+                            {{ form.captcha}}
+                        </div>
                         <button type="submit" class="btn">send massage</button>
                     </form>
                 </div>
