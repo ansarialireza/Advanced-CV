@@ -25,7 +25,7 @@ def blog_view(request, **kwargs):
     for post in posts:
         post.tags = post.tags.all()
 
-    paginator = Paginator(posts, 2)
+    paginator = Paginator(posts, 3)
 
     try:
         page_number = request.GET.get('page')

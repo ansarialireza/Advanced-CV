@@ -1,0 +1,9 @@
+<!-- Existing code -->
+<div class="widget">
+    <h4 class="widget-title">Tags</h4>
+    <ul class="sidebar__tags">
+        {% for tag in tags %}
+            <li><a href="{% url 'blog:tag' tag_name=tag.name %}">{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

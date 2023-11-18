@@ -1,0 +1,57 @@
+{% load static %}
+{% load humanize %}
+
+<div class="comment__wrap">
+    <div class="comment__title">
+        <h4 class="title">({{ comments|length }}) Comments</h4>
+    </div>
+    <ul class="comment__list">
+        {% for comment in comments %}
+        <li class="comment__item">
+            <div class="comment__thumb">
+                <img src="{% static 'img/blog/c1.jpg' %}" alt="">
+            </div>
+            <div class="comment__content">
+                <div class="comment__avatar__info">
+                    <div class="info">
+                        <h4 class="title">{{ comment.name }}</h4>
+                        <span class="date">{{ comment.created_date|naturalday }}</span>
+                    </div>
+                </div>
+                <p>{{ comment.message }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="comment__form">
+    <div class="comment__title">
+        <h4 class="title">Leave a Comment</h4>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ comment_form.errors }}
+        {% if not request.user.is_authenticated %}
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="name" placeholder="Enter your name*" required>
+            </div>
+            <div class="col-md-6">
+                <input type="email" name="email" placeholder="Enter your mail*" required>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="col-md-6">
+                <input type="text" placeholder="Website*">
+            </div>
+        </div>
+        <textarea name="message" placeholder="Enter your Message*" required></textarea>
+
+        <button type="submit" class="btn">Post Comment</button>
+    </form>
+</div>

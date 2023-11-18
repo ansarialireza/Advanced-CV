@@ -1,5 +1,6 @@
 from django import template
 from blog.models import Post,Category,Comment
+from taggit.models import Tag
 register = template.Library()
 
 @register.simple_tag(name='totalposts')
@@ -34,3 +35,8 @@ def postcategories():
 @register.simple_tag(name='comment_count')
 def function(pid):
     return Comment.objects.filter(post=pid, approved=True).count()
+
+@register.inclusion_tag('blog/blog-tags.html')
+def posttags():
+    tags = Tag.objects.all()
+    return {'tags': tags}
