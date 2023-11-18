@@ -52,29 +52,31 @@
             <!-- contact-area -->
             <div class="contact-area">
                 <div class="container">
-                    <form action="#" class="contact__form">
+                    <form action="{% url 'website:contact' %}" method="post" class="contact__form">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" placeholder="Enter your name*">
+                                <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Enter your name*">
                             </div>
                             <div class="col-md-6">
-                                <input type="email" placeholder="Enter your mail*">
+                                <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" placeholder="Enter your mail*">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" placeholder="Enter your subject*">
+                                <input type="text" name="{{ form.subject.name }}" id="{{ form.subject.id_for_label }}" placeholder="Enter your subject*">
                             </div>
                             <div class="col-md-6">
-                                <input type="text" placeholder="Your Budget*">
+                                <input type="text" name="{{ form.budget.name }}" id="{{ form.budget.id_for_label }}" placeholder="Your Budget*" pattern="\d+" title="Please enter a number">
                             </div>
                         </div>
-                        <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
+                        <textarea name="{{ form.message.name }}" id="{{ form.message.id_for_label }}" placeholder="Enter your massage*"></textarea>
                         <div class="form-group">
-                            {{ form.captcha}}
+                            {{ form.captcha }}
                         </div>
-                        <button type="submit" class="btn">send massage</button>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
+            
             <!-- contact-area-end -->
 
             <!-- contact-info-area -->

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import ContactForm,NewsletterForm
+from .forms import ContactForm
 from django.contrib import messages
 
 def home(request):
@@ -14,34 +14,40 @@ def services(request):
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        print("POST request received")
         if form.is_valid():
-            contact = form.save(commit=False) 
-            contact.name = 'Anonymous' 
+            print("Form is valid")
+            contact = form.save(commit=False)
+            contact.name = 'Anonymous'
             contact.save()
-            messages.success(request,'Submitted correctly')
+            messages.success(request, 'Submitted correctly')
             return HttpResponseRedirect('/contact')
         else:
-            messages.error(request,'shet!!!!!!!')
+            print("Form is invalid")
+            messages.error(request, 'shet!!!!!!!')
+            print(form.errors)
     else:
         form = ContactForm()
 
+    print("Rendering the contact.html template")
     return render(request, 'website/contact.html', {'form': form})
 
-def newsletter(request):
-    if request.method == 'POST':
-        form = NewsletterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Sent !')
-            return HttpResponseRedirect('/')
-        else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.add_message(request, messages.ERROR, f"Form error for field {field}: {error}")
-    else:
-        form = NewsletterForm()
 
-    return HttpResponseRedirect('/')
+# def newsletter(request):
+#     if request.method == 'POST':
+#         form = NewsletterForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request,'Sent !')
+#             return HttpResponseRedirect('/')
+#         else:
+#             for field, errors in form.errors.items():
+#                 for error in errors:
+#                     messages.add_message(request, messages.ERROR, f"Form error for field {field}: {error}")
+#     else:
+#         form = NewsletterForm()
+
+#     return HttpResponseRedirect('/')
 
 
 

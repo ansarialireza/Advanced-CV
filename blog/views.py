@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.urls import reverse 
+from django.http import QueryDict
 
 
 
@@ -51,12 +52,20 @@ def blog_single(request, pid):
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
+        
+        if request.user.is_authenticated:
+            initial_data = {
+                'name': request.user.username,
+                'email': request.user.email,
+            }
+            combined_data = {**initial_data, **request.POST}
+            comment_form = CommentForm(combined_data)
+
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
             messages.success(request, 'Submitted correctly')
-            # Clear the form to prevent resubmission on page reload
             return redirect(request.path_info)
         else:
             messages.error(request, 'Oops, there was an error in the form submission!') 
