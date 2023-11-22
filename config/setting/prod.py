@@ -6,7 +6,7 @@ from config.settings import *
 SECRET_KEY = 'django-insecure-o-k&e=42c8kvzz+58m96on3-u!ea-x7v*yv*na3e!o^r@po-6)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.ansrza.ir','ansrza.ir']
 
@@ -18,15 +18,16 @@ SITE_ID = 2
 
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.mysql',
-       'NAME': 'ansrzair_travel',
-       'USER': 'ansrzair_alireza',
-       'PASSWORD': 'Ansari1999',
-       'HOST': 'localhost',
-       'PORT': '3306',
-   }
-}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ansrzair_CV',
+        'USER': 'ansrzair_CV',
+        'PASSWORD': 'Ansari1999',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+ }
+
 
 STATIC_ROOT = '/home/ansrzair/public_html/static'
 MEDIA_ROOT = '/home/ansrzair/public_html/media'
