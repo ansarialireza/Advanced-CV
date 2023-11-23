@@ -2,8 +2,8 @@
     RewriteEngine On
 
     # Redirect www to non-www
-    RewriteCond %{HTTP_HOST} ^www\.domain\.ir [NC]
-    RewriteRule ^(.*)$ https://domain.ir/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^www\.ansrza\.ir [NC]
+    RewriteRule ^(.*)$ https://ansrza.ir/$1 [L,R=301]
 
     # Redirect http to https
     RewriteCond %{HTTPS} off
