@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import ContactForm
+from .forms import ContactForm,NewsletterForm
 from django.contrib import messages
 
 def home(request):
@@ -33,21 +33,22 @@ def contact(request):
     return render(request, 'website/contact.html', {'form': form})
 
 
-# def newsletter(request):
-#     if request.method == 'POST':
-#         form = NewsletterForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request,'Sent !')
-#             return HttpResponseRedirect('/')
-#         else:
-#             for field, errors in form.errors.items():
-#                 for error in errors:
-#                     messages.add_message(request, messages.ERROR, f"Form error for field {field}: {error}")
-#     else:
-#         form = NewsletterForm()
+def newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Sent !')
+            return HttpResponseRedirect('/')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.add_message(request, messages.ERROR, f"Form error for field {field}: {error}")
+    else:
+        form = NewsletterForm()
 
-#     return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
+
 
 
 def handler404(request, exception):
