@@ -192,3 +192,8 @@ STATICFILES_FINDERS = (
     # other finders..
     'compressor.finders.CompressorFinder',
 )
+
+# ROBOTS_USE_SITEMAP = True
+# ROBOTS_SITEMAP_URLS = [
+#     'http://www.ansrza.ir/sitemap.xml',
+# ]

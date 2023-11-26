@@ -48,8 +48,8 @@
                                 <div class="blog__details__content services__details__content">
                                     <ul class="blog__post__meta">
                                         <li><i class="fal fa-calendar-alt"></i>{{post.published_date|date:"D M Y"}}</li>
-                                        <li><i class="fal fa-comments-alt"></i> <a href="#">Comment ({% comment_count post.id%})</a></li>
-                                        <li class="post-share"><a href="#"><i class="fal fa-share-all"></i> (18)</a></li>
+                                        <li><i class="fal fa-comments-alt"></i> Comment ({% comment_count post.id%})</li>
+                                        <li><i class=""></i> Views (<b>{{post.counted_views}}</b>)</li>
                                     </ul>
                                     <h2 class="title">{{post.title}}</h2>
                                     <p>{{post.content|safe}}</p>
