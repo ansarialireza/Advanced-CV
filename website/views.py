@@ -50,6 +50,5 @@ def contact(request):
 #     return HttpResponseRedirect('/')
 
 
-
-def coming_soon(request):
-    return render(request, 'coming_soon.html')
+def handler404(request, exception):
+    return render(request, 'website/404.html', status=404)

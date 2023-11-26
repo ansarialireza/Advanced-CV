@@ -22,6 +22,8 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap
 from blog.sitemaps import BlogSitemap
+from django.conf.urls import handler404
+
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -42,3 +44,5 @@ urlpatterns = [
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'website.views.handler404'

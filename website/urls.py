@@ -1,9 +1,6 @@
 
 from django.urls import path
 from website.views import *
-from django.urls import re_path
-
-
 app_name = 'website'
 
 urlpatterns = [
@@ -13,3 +10,5 @@ urlpatterns = [
     path('services', services, name='services'),
     # path('newsletter', newsletter, name='newsletter'),
 ]
+
+
