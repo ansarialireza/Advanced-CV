@@ -1,11 +1,5 @@
-<IfModule mod_rewrite.c>
+<IfModule rewrite>
     RewriteEngine On
-
-    # Redirect www to non-www
     RewriteCond %{HTTP_HOST} ^www\.ansrza\.ir [NC]
-    RewriteRule ^(.*)$ https://ansrza.ir/$1 [L,R=301]
-
-    # Redirect http to https
-    RewriteCond %{HTTPS} off
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    RewriteRule ^(.*)$ http://ansrza.ir/$1 [L,R=301]
 </IfModule>
